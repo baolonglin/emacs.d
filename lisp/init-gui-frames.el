@@ -74,9 +74,9 @@
 
 
 (setq frame-title-format
-      '((:eval (if (buffer-file-name)
-                   (abbreviate-file-name (buffer-file-name))
-                 "%b"))))
+      '((:eval (concat (system-name) ":" (if (buffer-file-name)
+                                             (abbreviate-file-name (buffer-file-name))
+                                           "%b")))))
 
 ;; Non-zero values for `line-spacing' can mess up ansi-term and co,
 ;; so we zero it explicitly in those cases.

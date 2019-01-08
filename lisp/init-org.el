@@ -366,7 +366,7 @@ typical word processor."
   (org-babel-do-load-languages
    'org-babel-load-languages
    `((R . t)
-     (ditaa . t)
+     ;;(ditaa . t)
      (dot . t)
      (emacs-lisp . t)
      (gnuplot . t)
@@ -381,7 +381,8 @@ typical word processor."
      (screen . nil)
      (,(if (locate-library "ob-sh") 'sh 'shell) . t)
      (sql . nil)
-     (sqlite . t))))
+     (sqlite . t)
+     (mscgen . t))))
 
 
 (provide 'init-org)

@@ -27,6 +27,9 @@
 (add-hook 'after-init-hook 'global-whitespace-cleanup-mode)
 (after-load 'whitespace-cleanup-mode
   (diminish 'whitespace-cleanup-mode))
+(add-hook 'prog-mode-hook 'whitespace-mode)
+(setq whitespace-style '(face empty tabs lines-tail trailing))
+(setq whitespace-line-column 100)
 
 (global-set-key [remap just-one-space] 'cycle-spacing)
 

@@ -8,11 +8,21 @@
   ;; Shorter modeline
   (setq-default projectile-mode-line-prefix " Proj")
 
+  ;; Try to use the alien on windows
+  ;; (if *is-a-win*
+  ;;     (setq projectile-indexing-method 'alien))
+
   (after-load 'projectile
-    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
-
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+    (setq-default
+     projectile-mode-line
+     '(:eval
+       (if (file-remote-p default-directory)
+           " Proj"
+         (format " Proj[%s]" (projectile-project-name))))
+     projectile-enable-caching t)
+    )
   (maybe-require-package 'ibuffer-projectile))
-
 
 (provide 'init-projectile)
 ;;; init-projectile.el ends here

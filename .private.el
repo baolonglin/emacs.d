@@ -1,0 +1,7 @@
+(setq p-mu4e-maildir "")
+(setq p-mu4e-office365-mail-address "")
+(setq p-mu4e-office365-mail-full-name "")
+(setq p-mu4e-office365-mail-signature "")
+(setq p-jiralib-url "")
+(setq p-cquery-executable "")
+(setq p-elfeed-feeds '())
