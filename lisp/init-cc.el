@@ -120,13 +120,10 @@
           header-line-format which-func-header-line-format)))
 
 
-(require-package 'lsp-mode)
-(when (require 'lsp-mode nil :noerror)
-  )
-(require-package 'cquery)
-(when (require 'cquery nil :noerror)
-  (setq cquery-executable p-cquery-executable)
-  )
+;; (require-package 'cquery)
+;; (when (require 'cquery nil :noerror)
+;;   (setq cquery-executable p-cquery-executable)
+;;   )
 
 
 (provide 'init-cc)

@@ -1,3 +1,7 @@
+;;; init-local.el --- Load the full configuration -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
+
 ;; General settings
 (setq calendar-week-start-day 1)
 (setq truncate-lines t)
@@ -12,7 +16,7 @@
 ;;  (load private-custom-file))
 
 (require-package 'yasnippet)
-(after-load 'yasnippet
+(when (require 'yasnippet nil :noerror)
   (yas-global-mode 1)
   )
 
@@ -21,6 +25,7 @@
   (require 'magit-gerrit)
   )
 
+(require 'init-lsp)
 (require 'init-cc)
 
 (require-package 'paradox)
