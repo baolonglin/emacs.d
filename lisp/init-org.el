@@ -54,7 +54,14 @@
         (url "http://jaist.dl.sourceforge.net/project/plantuml/plantuml.jar"))
     (setq org-plantuml-jar-path (expand-file-name jar-name (file-name-directory user-init-file)))
     (unless (file-exists-p org-plantuml-jar-path)
-      (url-copy-file url org-plantuml-jar-path))))
+      (url-copy-file url org-plantuml-jar-path)))
+  (add-to-list
+   'org-src-lang-modes '("plantuml" . plantuml)))
+
+(require-package 'plantuml-mode)
+(after-load 'plantuml-mode
+  (setq plantuml-jar-path org-plantuml-jar-path)
+  )
 
 
 ;; Re-align tags when window shape changes

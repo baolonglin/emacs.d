@@ -65,6 +65,11 @@
 
 
 (require 'init-log)
+(require 'init-bb)
+
+(require-package 'xclip)
+(after-load 'xclip
+  (xclip-mode t))
 
 (provide 'init-local)
 ;;; init-local.el ends here
